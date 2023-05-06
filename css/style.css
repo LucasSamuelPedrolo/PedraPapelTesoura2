@@ -1,12 +1,157 @@
 * {
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: teal;
+    overflow: hidden;
 }
 
 .container {
-    background-color: antiquewhite;
+    margin: 3rem auto;
+    width: 30rem;
+    background-color: aliceblue;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.jogadaPlayer {
     width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 3rem;
+    border-radius: 0.3rem;
+}
+
+.jogada {
+    width: 6rem;
+    height: 6rem;
+}
+
+.jogada img {
+    width: 100%;
+    height: 100%;
+}
+
+.jogadaMaquina {
+    height: 12rem;
+    background-color: rgb(68, 68, 68);
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.jogadaMaquina h2 {
+    text-align: center;
+    color: white;
+}
+
+.maquina {
+    border-radius: 0.3rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultadoFinal{
+    position: absolute;
+    width: 100vw;
     height: 100vh;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.resultadoFinalVisible{
+    visibility: visible !important;
+    background-color: rgba(61, 58, 58, 0.884);
+}
+
+.resultadoFinalHidden{
+    visibility: hidden;
+}
+
+.novoJogo{
+    width: 15rem;
+    height: 8rem;
+    font-size: 1.5rem;
+}
+
+.pontuacao{
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    padding: 0.3rem;
+}
+
+.result{
+    text-align: center;
+    border: solid black 0.1rem;
+    color: whitesmoke;
+    background-color: rgb(70, 69, 69);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.pontuacaoDisplayPontMaquina{
+    animation-name:colorPontuacaoDerrota ;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 0.3rem;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorPontuacaoDerrota{
+    to{
+        background-color: rgb(255, 18, 18);
+    };
+
+    from{
+        background-color: rgb(255, 0, 0);
+    }
+}
+
+.pontuacaoDisplayPontPlayer{
+    animation-name:colorPontuacaoWin ;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 0.3rem;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorPontuacaoWin{
+    to{
+        background-color: rgb(38, 255, 18);
+    };
+
+    from{
+        background-color: rgb(0, 255, 13);
+    }
+}
+
+.pontuacaoDisplayPontEmpate{
+    animation-name:colorPontuacaoEmpate ;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 0.3rem;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorPontuacaoEmpate{
+    to{
+        background-color: rgb(108, 110, 108);
+    };
+
+    from{
+        background-color: rgb(103, 104, 103);
+    }
 }
