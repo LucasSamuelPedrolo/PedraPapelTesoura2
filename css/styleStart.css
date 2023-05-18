@@ -17,7 +17,7 @@
 }
 
 .telaStart {
-    background-image: url('./image/uuunion.svg');
+    background-image: url('./image/qqquad.svg');
     background-position: auto auto;
     background-repeat: none;
     background-size: cover;
@@ -105,20 +105,4 @@
     border: black solid 0.1rem;
     font-size: 2rem;
     font-weight: bolder;
-}
-
-.playClicked{
-    animation-name: btnClick;
-    animation-duration: 300ms;
-    animation-iteration-count: infinite;
-}
-
-@keyframes btnClick{
-    to{
-        opacity: 0.6;
-    }
-
-    from{
-        opacity: 1;
-    }
 }

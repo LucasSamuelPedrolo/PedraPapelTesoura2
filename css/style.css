@@ -23,7 +23,7 @@
 
 .gameCard {
     width: 5rem;
-    background-color: #ecebeb;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +90,7 @@
 
 .gameCardmaquinaStyle .cardStyle {
     width: 100%;
-    padding: 0.1rem ;
+    padding: 0.1rem;
 }
 
 .pontuacaoDisplay {
@@ -107,12 +107,12 @@
     color: aliceblue;
 }
 
-.timer{
+.timer {
     display: flex;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     align-items: center;
     width: 100%;
     height: 100%;
@@ -121,7 +121,7 @@
     visibility: hidden;
 }
 
-.animationTimer{
+.animationTimer {
     animation: animationT 2.5s ease-in-out;
     font-size: 3rem;
     color: rgb(255, 255, 255);
@@ -131,18 +131,17 @@
     left: -4rem;
 }
 
-
-
-@keyframes animationT{
-    0%{
+@keyframes animationT {
+    0% {
         left: -10rem;
     }
 
-    40%{
+    40% {
         left: 50%;
     }
 
-100%{
-    left: 105%;
+    100% {
+        left: 110%;
+    }
 }
-}
+
