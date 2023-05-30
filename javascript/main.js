@@ -1,69 +1,37 @@
-function JokenpoGame() {
+const cardsSelect = document.querySelectorAll('.gameCard');
+const card = document.querySelectorAll('button');
+const opcoes = ['papel', 'pedra', 'tesoura'];
 
-    //coloca um timer na tela para jogar
-    function timerJogada() {
-        const timerHold = document.querySelector('.timerHolding');
-        const timerSelect = timerHold.querySelector('.timer');
-        let timerCount = 1;
+for (let i = 0; i < card.length; i++) {
+    card[i].addEventListener('click', () => {
+        resultado(opcoes[i], maqRandom() )
+    })
+};
 
-        const timerStart = setInterval(() => {
-            timerSelect.innerHTML = `<p class=animationTimer>${++timerCount}</p>`;
-        }, 2000);
-
-        setTimeout(() => {
-            clearInterval(timerStart)
-            timerHold.style.visibility = 'hidden';
-        }, 6000);
-
-    }
-
-    function inputMaquina() {
-        const maquinaOpcoes = ['papel', 'pedra', 'tesoura'];
-        return maquinaOpcoes[Math.floor(Math.random() * maquinaOpcoes.length)];
-    }
-
-    function centerCardClone(value) {
-        
-        
-    }
-
-    this.start = () => {
-        this.retiraTelaStart();
-        this.inputCardPlayer();
-    },
-
-        this.retiraTelaStart = () => {
-            const containerTelaStart = document.querySelector('.container');
-            const btnStart = containerTelaStart.querySelector('.play');
-
-            //pequenos efeitos de tela e retirada da tela de 'jogar'
-            btnStart.addEventListener('click', () => {
-                containerTelaStart.style.animation = 'escureceTela 2s';
-
-                setTimeout(() => {
-                    containerTelaStart.style.visibility = 'hidden'
-                }, 2000)
-            });
-
-        },
-
-        this.inputCardPlayer = () => {
-            const escolhasJogador = {
-                papelSelect: 'papel', pedraSelect: 'pedra', tesouraSelect: 'tesoura'
-            };
-            document.addEventListener('click', (e) => {
-                const el = e.target;
-                if (escolhasJogador[el.id]) {
-                    const maquinaChose = inputMaquina();
-
-                    animacaoCards(el.id)
-                    console.log('jogadas :', escolhasJogador[el.id], maquinaChose);
-                }
-            })
-        }
-
+function maqRandom() {
+    const escolhaAleatoria = Math.floor(Math.random() * opcoes.length);
+    return opcoes[escolhaAleatoria];
 }
 
-const jokenpoStart = new JokenpoGame();
-jokenpoStart.start();
+function resultado(player, maquina) {
+    if (player === maquina) {
+        console.log('empate');
+        return;
+    }
+    if (player === 'papel' && maquina === 'tesoura') {
+        console.log('player perdeu por jogar papel');
+        return;
+    }
+    if (player === 'tesoura' && maquina === 'pedra') {
+        console.log('player perdeu por jogar tesoura');
+        return;
+    }
+    if (player === 'pedra' && maquina === 'papel') {
+        console.log('player perder por jogar pedra');
+        return;
+    }
+
+    console.log('player ganhou!');
+}
+
 
